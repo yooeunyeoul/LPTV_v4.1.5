@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/ic_launcher" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/noti_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title" />
+
+            <TextView
+                android:id="@+id/noti_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="message" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/noti_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="오후 2:33" />
+
+        <TextView
+            android:id="@+id/noti_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/noti_time"
+            android:text="1" />
+
+        <LinearLayout
+            android:id="@+id/noti_text_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/noti_number"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/noti_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="전달하기" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" | " />
+
+            <TextView
+                android:id="@+id/noti_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="공유하기" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" | " />
+
+            <TextView
+                android:id="@+id/noti_saved"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="저장하기" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

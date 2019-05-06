@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECECEC"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/setting_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1px"-->
+    <!--android:layout_marginBottom="10dp"-->
+    <!--android:background="#d7d7d7" />-->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#d7d7d7" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <WebView
+            android:id="@+id/receive_webview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <include
+            android:id="@+id/networkErrorLy"
+            layout="@layout/network_connection_error_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#ffffff"-->
+    <!--android:paddingBottom="15dp"-->
+    <!--android:paddingLeft="15dp"-->
+    <!--android:paddingRight="15dp"-->
+    <!--android:paddingTop="15dp">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:orientation="vertical">-->
+
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="푸시알림 받기"-->
+    <!--android:textColor="#000000"-->
+    <!--android:textSize="16dp" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/setting_receive_ment01"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="앱에서 발송되는 푸시알림을 받습니다."-->
+    <!--android:textColor="#949494"-->
+    <!--android:textSize="12dp" />-->
+    <!--</LinearLayout>-->
+
+    <!--<ToggleButton-->
+    <!--android:id="@+id/setting_receive_pushBtn"-->
+    <!--android:layout_width="60dp"-->
+    <!--android:layout_height="30dp"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:background="@drawable/setting_push_btn"-->
+    <!--android:checked="true"-->
+    <!--android:textOff=""-->
+    <!--android:textOn="" />-->
+
+    <!--</RelativeLayout>-->
+
+    <!--<ScrollView-->
+    <!--android:id="@+id/setting_receive_scrollview"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1px"-->
+    <!--android:layout_marginBottom="10dp"-->
+    <!--android:background="#d7d7d7" />-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1px"-->
+    <!--android:background="#d7d7d7" />-->
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#ffffff"-->
+    <!--android:paddingBottom="15dp"-->
+    <!--android:paddingLeft="15dp"-->
+    <!--android:paddingRight="15dp"-->
+    <!--android:paddingTop="15dp">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="기분 좋은 뉴스"-->
+    <!--android:textColor="#000000"-->
+    <!--android:textSize="16dp" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/setting_receive_ment02"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="새로운 뉴스 등록 시"-->
+    <!--android:textColor="#949494"-->
+    <!--android:textSize="12dp" />-->
+    <!--</LinearLayout>-->
+
+    <!--<ToggleButton-->
+    <!--android:id="@+id/setting_receive_goodnewsBtn"-->
+    <!--android:layout_width="25dp"-->
+    <!--android:layout_height="25dp"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:background="@drawable/setting_check_btn"-->
+    <!--android:checked="true"-->
+    <!--android:textOff=""-->
+    <!--android:textOn="" />-->
+    <!--</RelativeLayout>-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1px"-->
+    <!--android:background="#d7d7d7" />-->
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#ffffff"-->
+    <!--android:paddingBottom="15dp"-->
+    <!--android:paddingLeft="15dp"-->
+    <!--android:paddingRight="15dp"-->
+    <!--android:paddingTop="15dp">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="힐링스토리"-->
+    <!--android:textColor="#000000"-->
+    <!--android:textSize="16dp" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/setting_receive_ment03"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="새로운 힐링스토리 등록 시"-->
+    <!--android:textColor="#949494"-->
+    <!--android:textSize="12dp" />-->
+    <!--</LinearLayout>-->
+
+    <!--<ToggleButton-->
+    <!--android:id="@+id/setting_receive_healingstoryBtn"-->
+    <!--android:layout_width="25dp"-->
+    <!--android:layout_height="25dp"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:background="@drawable/setting_check_btn"-->
+    <!--android:checked="true"-->
+    <!--android:textOff=""-->
+    <!--android:textOn="" />-->
+    <!--</RelativeLayout>-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1px"-->
+    <!--android:background="#d7d7d7" />-->
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#ffffff"-->
+    <!--android:paddingBottom="15dp"-->
+    <!--android:paddingLeft="15dp"-->
+    <!--android:paddingRight="15dp"-->
+    <!--android:paddingTop="15dp">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="나의 힐링타임"-->
+    <!--android:textColor="#000000"-->
+    <!--android:textSize="16dp" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/setting_receive_ment04"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="새로운 댓글 등록 시"-->
+    <!--android:textColor="#949494"-->
+    <!--android:textSize="12dp" />-->
+    <!--</LinearLayout>-->
+
+    <!--<ToggleButton-->
+    <!--android:id="@+id/setting_receive_myhealingBtn"-->
+    <!--android:layout_width="25dp"-->
+    <!--android:layout_height="25dp"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:background="@drawable/setting_check_btn"-->
+    <!--android:checked="true"-->
+    <!--android:textOff=""-->
+    <!--android:textOn="" />-->
+    <!--</RelativeLayout>-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1px"-->
+    <!--android:background="#d7d7d7" />-->
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#ffffff"-->
+    <!--android:paddingBottom="15dp"-->
+    <!--android:paddingLeft="15dp"-->
+    <!--android:paddingRight="15dp"-->
+    <!--android:paddingTop="15dp">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="나의 힐링용품"-->
+    <!--android:textColor="#000000"-->
+    <!--android:textSize="16dp" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/setting_receive_ment05"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="새로운 게시글 등록 시"-->
+    <!--android:textColor="#949494"-->
+    <!--android:textSize="12dp" />-->
+    <!--</LinearLayout>-->
+
+    <!--<ToggleButton-->
+    <!--android:id="@+id/setting_receive_myhealingGoodsBtn"-->
+    <!--android:layout_width="25dp"-->
+    <!--android:layout_height="25dp"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:background="@drawable/setting_check_btn"-->
+    <!--android:checked="true"-->
+    <!--android:textOff=""-->
+    <!--android:textOn="" />-->
+    <!--</RelativeLayout>-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1px"-->
+    <!--android:layout_marginBottom="10dp"-->
+    <!--android:background="#d7d7d7" />-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1px"-->
+    <!--android:background="#d7d7d7" />-->
+
+
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="#ffffff"-->
+    <!--android:paddingBottom="15dp"-->
+    <!--android:paddingLeft="15dp"-->
+    <!--android:paddingRight="15dp"-->
+    <!--android:paddingTop="15dp">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="영상"-->
+    <!--android:textColor="#000000"-->
+    <!--android:textSize="16dp" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/setting_receive_ment06"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="프로그램 업데이트 시"-->
+    <!--android:textColor="#949494"-->
+    <!--android:textSize="12dp" />-->
+    <!--</LinearLayout>-->
+
+    <!--<ToggleButton-->
+    <!--android:id="@+id/setting_receive_video"-->
+    <!--android:layout_width="25dp"-->
+    <!--android:layout_height="25dp"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:background="@drawable/setting_check_btn"-->
+    <!--android:checked="true"-->
+    <!--android:textOff=""-->
+    <!--android:textOn="" />-->
+    <!--</RelativeLayout>-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="1px"-->
+    <!--android:background="#d7d7d7" />-->
+    <!--</LinearLayout>-->
+    <!--</ScrollView>-->
+</LinearLayout>

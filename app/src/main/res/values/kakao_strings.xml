@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="kakao_app_key" >cd0e30f4a92b06a61bf17af9262ad42f</string>
+    <string name="kakao_scheme">kakaocd0e30f4a92b06a61bf17af9262ad42f</string>
+    <string name="kakaolink_host">kakaolink</string>
+    <string name="kakaostory_host">kakaostory</string>
+</resources>

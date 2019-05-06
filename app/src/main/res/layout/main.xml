@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <!-- 소셜 로그인시 카카오, 페이스북은 버튼으로 구동 되어야 한다. 웹 뷰에서 사용하기 위해서 gone을 설정 -->
+        <com.kakao.widget.LoginButton
+            android:id="@+id/kakaoBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/facebookBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_Control"
+            android:layout_alignParentTop="true" />
+
+
+        <include
+            android:id="@+id/networkErrorLy"
+            layout="@layout/network_connection_error_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyleInverse"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:indeterminateDrawable="@drawable/pb01"
+            android:visibility="gone" />
+
+
+        <ProgressBar
+            android:id="@+id/progress02"
+            style="?android:attr/progressBarStyleInverse"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:indeterminateDrawable="@drawable/pb01"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/bottom_Control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#424242"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:baselineAligned="false"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/bottom_gotoHome"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@mipmap/icon_home" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/bottom_back_Page"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@mipmap/icon_back" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/bottom_next_Page"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@mipmap/icon_pre" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/bottom_reset_Page"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@mipmap/icon_refresh" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/bottom_page_Share"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@mipmap/icon_share" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/bottom_app_settings"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@mipmap/icon_system" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/leftmenuLayout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_gravity="start"-->
+    <!--android:fitsSystemWindows="true"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<WebView-->
+    <!--android:id="@+id/leftmenuWebview"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:scrollbars="none" />-->
+    <!--</LinearLayout>-->
+</android.support.v4.widget.DrawerLayout>

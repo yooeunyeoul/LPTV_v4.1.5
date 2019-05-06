@@ -1,0 +1,5 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name" >체인지TV</string>
+    <string name="need_login"><u>로그인 ></u></string>
+    <!--<string name="google_app_id">lptv-gcm</string>-->
+</resources>

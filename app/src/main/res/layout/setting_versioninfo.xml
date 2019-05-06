@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/setting_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginBottom="10dp"
+        android:background="#d7d7d7" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/versionInfo_appIcon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@mipmap/app_icon" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nowVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:layout_toRightOf="@+id/versionInfo_appIcon"
+                android:text="현재버전"
+                android:textColor="#959595"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/recentVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="최신버전"
+                android:textColor="#000000"
+                android:textSize="18dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/recentVersion_Text"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@mipmap/btn_version_off"
+            android:text="최신 버전입니다."
+            android:textSize="15dp"
+            android:textColor="#ffffff"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/update_please"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@mipmap/btn_version_on"
+            android:text="업데이트"
+            android:textColor="#ffffff"
+            android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>

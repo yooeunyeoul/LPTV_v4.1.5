@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lptv_12110101">
+
+    <!-- push -->
+    <permission
+        android:name="com.lptv_12110101.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.lptv_12110101.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" /> <!-- 계정 서비스의 계정 목록에 대한 액세스를 허용 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 프로세서가 절전 모드 또는 화면이 어두워지지 않도록 한다. -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- push -->
+
+    <!-- network -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />  <!-- 응용 프로그램이 네트워크에 대한 정보에 액세스 할 수 있도록 한다.-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 응용 프로그램이 Wiif 네트워크에 대한 정보에 액세스 할 수 있도록 한다. -->
+    <!-- network -->
+
+    <!-- storage -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 애플리케이션이 외부 저장소를 쓸 수 있게 한다.-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 애클리케이션이 외부 저장소에서 읽을 수 있도록 한다. -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <!-- storage -->
+
+    <!-- state -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- state -->
+
+
+    <application
+        android:name=".application.Application"
+        android:allowBackup="true"
+        android:icon="@mipmap/app_icon"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" /> -->
+
+        <meta-data
+            android:name="WCS_GCODE"
+            android:value="18b0998c1d2b" />
+
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="com.lptv.12110101" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".settings.Settings"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".settings.Setting_PushStyle"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".settings.Setting_Receive"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".settings.Setting_VersionInfo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".settings.Setting_OpenSource"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".settings.Setting_Player"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VideoPlayerActivity"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/ExoMediaTheme" />
+        <activity
+            android:name=".PlayFullScreenActivity"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/ExoMediaTheme" />
+
+        <!--modified-->
+        <receiver
+            android:name="com.lptv_12110101.push.PushReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+              <action android:name="com.google.android.fcm.intent.RECEIVE"/>
+              <action android:name="org.mosquitto.android.mqtt.MSGRECVD"/>
+
+                <category android:name="com.lptv_12110101" />
+            </intent-filter>
+        </receiver>
+
+        <!--FCM Service added -->
+        <service
+            android:name="com.apms.sdk.push.GetFCMInstanceID"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.apms.sdk.push.FCMPushService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <!-- push popup activity -->
+        <activity
+            android:name="com.lptv_12110101.push.PushPopupActivity"
+            android:configChanges="orientation"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/push_popup_theme" />
+
+        <!-- apms push clickNotiReceiver -->
+        <receiver android:name="com.lptv_12110101.push.PushNotiReceiver">
+            <intent-filter>
+                <action android:name="com.lptv_12110101.push.notification" />
+            </intent-filter>
+        </receiver>
+
+        <!-- APMS Private RestartReceiver -->
+        <receiver android:name="com.apms.sdk.push.mqtt.RestartReceiver">
+            <intent-filter>
+                <action android:name="ACTION_MQTT_PING" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.ACTION_PACKAGE_RESTARTED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- APMS Private connectionChangeReceiver -->
+        <receiver
+            android:name="com.apms.sdk.push.mqtt.ConnectionChangeReceiver"
+            android:label="NetworkConnection">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Private PUSH Service -->
+        <service
+            android:name="com.apms.sdk.push.mqtt.MQTTService"
+            android:enabled="true"
+            android:exported="true"
+            android:label="PushService"
+            android:process="com.apms.sdk.HumusonpushService" />
+
+        <!-- Private PUSH Receiver -->
+        <receiver android:name="com.apms.sdk.push.PushReceiver">
+            <intent-filter>
+                <action android:name="org.mosquitto.android.mqtt.MSGRECVD" />
+                <category android:name="com.lptv_12110101" />
+            </intent-filter>
+        </receiver>
+
+        <!-- APMS Data Sender Service -->
+        <service
+            android:name="com.apms.sdk.service.DataSenderService"
+            android:enabled="true"
+            android:exported="true"
+            android:label="SenderService"
+            android:process="com.apms.sdk.DataSenderService" />
+
+        <!-- APMS Data Sender receiver -->
+        <receiver android:name="com.apms.sdk.service.SenderSeviceReceiver">
+            <intent-filter>
+                <action android:name="SENDER.START" />
+                <action android:name="SENDER.STOP" />
+            </intent-filter>
+        </receiver>
+
+        <!-- System bar에 표시될 icon 입니다. -->
+        <meta-data
+            android:name="APMS_SET_ICON"
+            android:resource="@mipmap/app_push_icon01" />
+
+        <!-- 5.0이상에서 set icon의 배경 색 -->
+        <!--<meta-data-->
+            <!--android:name="APMS_SET_ICON_BG"-->
+            <!--android:resource="@color/noticolor" />-->
+        <meta-data
+                android:name="APMS_NOTI_BACK"
+                android:value="\#220022"/>
+
+        <!--&lt;!&ndash; Notification bar 에 이미지가 숨겨졌을시 표시될 내용입니다. &ndash;&gt;-->
+        <meta-data
+            android:name="APMS_NOTI_CONTENT"
+            android:value="두손가락을 이용해 아래로 당겨주세요." />
+
+
+        <!--&lt;!&ndash; Notification bar를 상세보기로 내렸을 경우 표시 되는 icon입니다. &ndash;&gt;-->
+        <meta-data
+            android:name="APMS_SET_LARGE_ICON"
+            android:resource="@mipmap/noti_icon" />
+
+
+        <!-- 소셜 로그인 카카오톡 -->
+        <activity android:name="com.kakao.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="kakaotalk"
+                    android:scheme="kakaocd0e30f4a92b06a61bf17af9262ad42f" />
+            </intent-filter>
+        </activity>
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="cd0e30f4a92b06a61bf17af9262ad42f" />
+
+        <!-- 소셜 로그인 페이스북 -->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="649612225150901" />
+        <meta-data
+                android:name="com.facebook.sdk.ApplicationName"
+                android:value="@string/app_name" />
+
+        <activity
+                android:name="com.facebook.FacebookActivity"
+                android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+                android:label="@string/app_name"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <provider
+                android:name="com.facebook.FacebookContentProvider"
+                android:authorities="com.facebook.app.FacebookContentProvider649612225150901"
+                android:exported="true" />
+
+        <!-- 소셜 로그인 네이버 -->
+        <activity
+            android:name="com.nhn.android.naverlogin.ui.OAuthLoginActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.nhn.android.naverlogin.ui.OAuthLoginInAppBrowserActivity"
+            android:label="OAuth2.0 in-app" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="2991f6e0aa353a779e6506832f996209155eeae1" />
+
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+    </application>
+</manifest>

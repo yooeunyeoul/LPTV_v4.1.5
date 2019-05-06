@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Replace placeholder ID with your tracking ID-->
+    <!--실제 서버일경우-->
+    <string name="ga_trackingId">UA-34039474-10</string>
+
+    <!--Enable automatic activity tracking-->
+    <bool name="ga_autoActivityTracking">true</bool>
+
+    <!--Enable automatic exception tracking-->
+    <bool name="ga_reportUncaughtExceptions">false</bool>
+</resources>

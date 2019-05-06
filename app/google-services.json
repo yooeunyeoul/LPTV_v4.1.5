@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "108065095672",
+    "project_id": "lptv-gcm",
+    "name" : "LPTV-GCM"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:108065095672:android:1365c011c2a1e6f6",
+        "client_id": "android:com.lptv_12110101",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "com.lptv_12110101"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAowmKJeioelQcR-6wEJBbkMLEGi8juGbo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "cloud_messaging_service": {
+          "status": 2,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 1
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}
